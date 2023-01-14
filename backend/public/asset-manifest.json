@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9e1c2c3c.css",
+    "main.js": "/static/js/main.7c31ca5e.js",
+    "static/media/Disney-Puzzle.png": "/static/media/Disney-Puzzle.bedec11612bbf7eb3d07.png",
+    "static/media/Teddy-Bear.png": "/static/media/Teddy-Bear.f3d16560aaf3f2dc2d93.png",
+    "static/media/ToyStory-Lego.png": "/static/media/ToyStory-Lego.decbeaf583f2050e8608.png",
+    "static/media/default-toy.png": "/static/media/default-toy.86232f1a31db2e2aee18.png",
+    "static/media/Sorting-Cube.png": "/static/media/Sorting-Cube.aa0e16b1092203818d4c.png",
+    "static/media/Remote-Car.png": "/static/media/Remote-Car.886c4b75c1d06f2ed1b7.png",
+    "static/media/Barbie.png": "/static/media/Barbie.5285a9be6539fb036fc1.png",
+    "static/media/out-of-stock.png": "/static/media/out-of-stock.3991d7638425c9ef80a2.png",
+    "static/media/in-stock.png": "/static/media/in-stock.a482370afa01a84cd578.png",
+    "static/media/loader.gif": "/static/media/loader.ecfdf3161608c7bb30b4.gif",
+    "index.html": "/index.html",
+    "main.9e1c2c3c.css.map": "/static/css/main.9e1c2c3c.css.map",
+    "main.7c31ca5e.js.map": "/static/js/main.7c31ca5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e1c2c3c.css",
+    "static/js/main.7c31ca5e.js"
+  ]
+}
