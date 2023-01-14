@@ -1,0 +1,11 @@
+@mixin for-mobile-layout {
+    @media (max-width: $padded-break-narrow) {
+      @content;
+    }
+  }
+  
+  @mixin for-narrow-layout {
+    @media (min-width: $padded-break-narrow) {
+      @content;
+    }
+  }

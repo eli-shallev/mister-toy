@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: $clr5;
+    background-color: $clr1;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+
+    &.active {
+        text-decoration: overline;
+    }
+}
+
+img,
+embed,
+video,
+object {
+    max-width: 100%
+}

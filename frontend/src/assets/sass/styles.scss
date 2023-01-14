@@ -1,0 +1,28 @@
+//SETUP
+@import 'setup/vars';
+@import 'setup/mixins';
+
+//BASE
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+@import 'base/base';
+@import 'base/layout';
+
+//CMPS
+@import 'cmps/app-footer';
+@import 'cmps/app-header';
+@import 'cmps/doughunt-charts';
+@import 'cmps/google-map';
+@import 'cmps/toy-filter';
+@import 'cmps/toy-list';
+@import 'cmps/toy-preview';
+@import 'cmps/user-msg';
+
+//PAGES
+@import 'pages/about';
+@import 'pages/home-page';
+@import 'pages/toy-details';
+@import 'pages/toy-edit';
+@import 'pages/toy-index';
+
+
+

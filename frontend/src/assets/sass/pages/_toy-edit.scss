@@ -1,0 +1,68 @@
+.toy-edit {
+    position: relative;
+    background-color: $clr1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0;
+
+    .btn-back {
+        position: absolute;
+        left: 1em;
+        top: 1em;
+        font-size: 1.2em;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        margin: 0 auto;
+        gap: 1em;
+    }
+
+    input,
+    select {
+        background-color: $clr2;
+        color: $clr5;
+        height: 30px;
+        min-width: 250px;
+
+        &::placeholder {
+            color: $clr5;
+            opacity: 1;
+        }
+    }
+
+    .btn-sub {
+        max-width: 30%;
+        align-self: center;
+        border: none;
+        padding: 0.8em;
+        cursor: pointer;
+        font-weight: 700;
+        color: $clr5;
+        background-color: $clr2;
+        border-radius: 0.5em;
+
+        &:hover {
+            background-color: $clr3;
+        }
+    }
+}
+
+.MuiAutocomplete-option {
+    background-color: $clr2;
+    color: $clr5;
+}
+
+.MuiAutocomplete-listbox {
+    background-color: $clr2;
+}
+
+.MuiAutocomplete-root {
+    min-width: 200px;
+}

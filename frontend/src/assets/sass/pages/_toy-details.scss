@@ -1,0 +1,48 @@
+.toy-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: $clr1;
+    padding-bottom: 1em;
+    height: 100%;
+
+    .stock-logo {
+        position: absolute;
+        left: 0;
+    }
+
+    .img-container {
+        width: fit-content;
+        position: relative;
+    }
+
+    .labels-container {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .toy-content {
+        position: relative;
+    }
+
+    .details-btns {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        >* {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        >*:hover {
+            color: rgba(0, 0, 0, 0.719);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.main-layout {
+    height: inherit;
+
+    >*:not(.full) {
+        margin: 0 auto;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    main {
+        flex-grow: 1;
+        width: 100%;
+    }
+}

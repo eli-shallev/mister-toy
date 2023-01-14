@@ -1,0 +1,57 @@
+[
+{
+    "_id": "t101",
+    "name": "Barbie",
+    "price": 39,
+    "labels": ["Doll", "Baby"],
+    "createdAt": 1673302882141,
+    "inStock": true,
+    "imgUrl" : "Barbie"
+},
+{
+    "_id": "t102",
+    "name": "Remote car",
+    "price": 119,
+    "labels": ["On wheels", "Battery Powered"],
+    "createdAt": 1673302882141,
+    "inStock": true,
+    "imgUrl" : "Remote-Car"
+},
+{
+    "_id": "t103",
+    "name": "Disney Puzzle",
+    "price": 79,
+    "labels": ["Puzzle", "Box game"],
+    "createdAt": 1631031801011,
+    "inStock": true,
+    "imgUrl" : "Disney-Puzzle"
+},
+{
+    "_id": "t104",
+    "name": "Toy Story Lego",
+    "price": 159,
+    "labels": ["Box game"],
+    "createdAt": 1673302882141,
+    "inStock": false,
+    "imgUrl" : "ToyStory-Lego"
+
+},
+{
+    "_id": "t105",
+    "name": "Sorting Cube",
+    "price": 59,
+    "labels": ["Doll", "Baby"],
+    "createdAt": 1673351551311,
+    "inStock": true,
+    "imgUrl" : "Sorting-Cube"
+},
+{
+    "_id": "t106",
+    "name": "Teddy Bear",
+    "price": 69,
+    "labels": ["Doll", "Baby"],
+    "createdAt": 1673351571311,
+    "inStock": true,
+    "imgUrl" : "Teddy-Bear"
+}
+]

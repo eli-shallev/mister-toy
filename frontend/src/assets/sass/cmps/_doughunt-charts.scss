@@ -1,0 +1,17 @@
+.doughnut-charts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+
+    .doughnut-item {
+        width: 100%;
+        color: $clr4;
+    }
+
+    @include for-mobile-layout{
+        flex-direction: column;
+    }
+}

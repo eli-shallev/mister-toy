@@ -1,0 +1,83 @@
+.toy-filter {
+    border: 1px solid lightgray;
+    padding: 1em;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    margin-top: 1em;
+    background-color: $clr4;
+
+    form {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+
+        >*::placeholder:not(label) {
+            color: $clr5;
+            opacity: 1;
+        }
+
+        >*:not(label) {
+            border-radius: 0.5em;
+            border: 1px solid lightgray;
+            background-color: $clr2;
+            color: $clr5;
+        }
+
+        input,select {
+            height: 30px;
+        }
+
+        @include for-mobile-layout {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    .sort {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+
+        >*:not(label) {
+            border-radius: 0.5em;
+            border: 1px solid lightgray;
+            height: 30px;
+            background-color: $clr2;
+            color: $clr5;
+        }
+    }
+
+    .pages {
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+
+        span {
+            font-weight: 700;
+        }
+
+        button {
+            border: none;
+            background-color: $clr4;
+            color: $clr2;
+            font-size: 1.2em;
+
+            &:active:hover {
+                color: $clr3;
+            }
+
+            &:disabled {
+                color: gray;
+            }
+        }
+    }
+
+    button,
+    input,
+    select {
+        cursor: pointer;
+    }
+}

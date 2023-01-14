@@ -1,0 +1,59 @@
+.google-map{
+    display: flex;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 1em;
+    gap: 1em;
+
+    .map-container{
+        width: 100%;
+        @include for-mobile-layout{
+            height: 400px ;
+        }
+    }
+
+    .branch-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-basis: 50%;
+
+        .branch-item{
+            border: 1px solid lightgray;
+            border-radius: 1em;
+            padding: 0.5em;
+            display: flex;
+            flex-direction: column;
+            width: max-content;
+            background-color: $clr4;
+
+            span{
+                margin-bottom: 0.5em;
+            }
+
+            button{
+                cursor: pointer;
+                padding: 0.5em;
+                border: none;
+                border-radius: 0.5em;
+                width: 50%;
+                background-color: $clr2;
+                color: $clr5;
+                align-self: flex-end;
+
+                &:hover{
+                    background-color: $clr3;
+                }
+            }
+        }
+        @include for-mobile-layout{
+            align-items: center;
+            gap:1em ;
+        }
+    }
+
+    @include for-mobile-layout{
+        flex-direction: column;
+        flex-flow: column-reverse;
+    }
+}
