@@ -5,7 +5,7 @@ export function AppFooter(){
     return (
         <>
         <footer className="app-footer full">
-            Toy Store
+            Eli Shallev
         </footer>
         <UserMsg/>
         </>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, RadialLinearScale } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { toyService } from '../services/toy.service';
+import { showErrorMsg } from '../services/event-bus.service';
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
@@ -10,11 +11,15 @@ export function DoughnutCharts() {
     const [PricesPerToyTypeData, SetPricesPerToyTypeData] = useState(null)
 
     useEffect(() => {
-        toyService.getDashboardData()
-            .then(({ labelsByAmountMap, labelsByPriceMap }) => {
-                SetInventoryByTypeData(getData(labelsByAmountMap,'Inventory by type'))
-                SetPricesPerToyTypeData(getData(labelsByPriceMap,'Prices per toy type'))
-            })
+        ; (async () => {
+            try {
+                const { labelsByAmountMap, labelsByPriceMap } = await toyService.getDashboardData()
+                SetInventoryByTypeData(getData(labelsByAmountMap, 'Inventory by type'))
+                SetPricesPerToyTypeData(getData(labelsByPriceMap, 'Prices per toy type'))
+            } catch (error) {
+                showErrorMsg('Cannot load data')
+            }
+        })()
     }, [])
 
     function getData(mainObj, title) {

@@ -1,6 +1,5 @@
 
 export function ToyPreview({toy}){
-
     return (
         <div className="toy-preview">
             <h2>{toy.name}</h2>

@@ -7,12 +7,14 @@ export const UPDATE_TOY = 'UPDATE_TOY'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
 export const SET_FILTER = 'SET_FILTER'
 export const SET_SORT = 'SET_SORT'
+export const SET_MOBILE_MENU = 'SET_MOBILE_MENU'
 
 const initialState = {
     toys: [],
     isLoading: false,
     filterBy: toyService.getDefaultFilter(),
-    sortBy: toyService.getDefaultSort()
+    sortBy: toyService.getDefaultSort(),
+    isMobileMenuOpen: false
 }
 
 export function toyReducer(state = initialState, action) {
@@ -35,6 +37,8 @@ export function toyReducer(state = initialState, action) {
             return { ...state, filterBy: action.filterBy }
         case SET_SORT:
             return { ...state, sortBy: action.sortBy }
+        case SET_MOBILE_MENU:
+            return { ...state, isMobileMenuOpen: action.isMobileMenuOpen }
         default:
             return state
     }

@@ -1,0 +1,34 @@
+.demo-login {
+    position: fixed;
+    background-color: $clr5;
+    color: $clr2;
+    border: 1px solid $clr2;
+    border-radius: 1em;
+    right: 1em;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em 1em 1em;
+    z-index: 70;
+
+    :nth-child(3) {
+        margin-top: 1em;
+    }
+
+    button {
+        cursor: pointer;
+        padding: 0.5em;
+        border: 1px solid gray;
+        border-radius: 0.5em;
+        background-color: $clr2 !important;
+        color: $clr5;
+
+        &:hover {
+            background-color: $clr3 !important;
+        }
+
+
+    }
+
+
+}

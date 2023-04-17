@@ -1,13 +1,11 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { toyService } from "../services/toy.service"
-import Multiselect from 'multiselect-react-dropdown';
 import { Autocomplete, TextField } from "@mui/material";
 
 export function ToyFilter({ onSetFilter, onSetSort, toysLength }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState(toyService.getDefaultFilter())
     const [sortByToEdit, setSortByToEdit] = useState(toyService.getDefaultSort())
-    const stateRef = useRef(toyService.getLabelsOptions())
     const [prevBtnStatus, setPrevBtnStatus] = useState(null)
     const [nextBtnStatus, setNextBtnStatus] = useState(null)
 
@@ -15,21 +13,20 @@ export function ToyFilter({ onSetFilter, onSetSort, toysLength }) {
         onSetFilter(filterByToEdit)
         onSetSort(sortByToEdit)
         setPrevBtnStatus(filterByToEdit.pageIdx < 1)
-        toyService.query(filterByToEdit, sortByToEdit, false)
-            .then(toys => {
-                setNextBtnStatus((filterByToEdit.pageIdx + 1) * toyService.PAGE_SIZE >= toys.length)
-            })
+            ; (async () => {
+                try {
+                    const toys = await toyService.query(filterByToEdit, sortByToEdit, false)
+                    setNextBtnStatus((filterByToEdit.pageIdx + 1) * toyService.PAGE_SIZE >= toys.length)
+                } catch (error) {
+                    console.log(error.msg)
+                }
+            })()
     }, [filterByToEdit, sortByToEdit])
 
     function onHandleChange({ target }) {
         const { type, value, name: field } = target
         filterByToEdit.pageIdx = 0
         setFilterByToEdit(prevFilter => ({ ...prevFilter, [field]: value }))
-    }
-
-    function onMultiChange(selectedList) {
-        filterByToEdit.pageIdx = 0
-        setFilterByToEdit(prevFilter => ({ ...prevFilter, labels: selectedList.map(item => item.name) }))
     }
 
     function onSortChange({ target }) {
@@ -49,7 +46,7 @@ export function ToyFilter({ onSetFilter, onSetSort, toysLength }) {
     }
 
     function onMultiChange(ev, value) {
-        console.log(value)
+        filterByToEdit.pageIdx = 0
         setFilterByToEdit(prevFilter => ({ ...prevFilter, labels: value }))
     }
 

@@ -12,6 +12,9 @@
         float: right;
         margin: 0;
         margin-inline-start: 3em;
+        position: absolute;
+        top: .5em;
+        right: .5em;
     }
 
     &.success {

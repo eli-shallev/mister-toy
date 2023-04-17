@@ -11,12 +11,14 @@ import { ToyDetails } from './pages/toy-details';
 import { ToyEdit } from './pages/toy-edit';
 import { ToyIndex } from './pages/toy-index';
 import { store } from './store/store';
+import { Screen } from './cmps/screen';
 
 export function App() {
   return (
     <Provider store={store}>
       <Router>
         <section className="main-layout app">
+          <Screen/>
           <AppHeader/>
           <main>
             <Routes>

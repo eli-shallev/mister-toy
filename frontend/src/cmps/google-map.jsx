@@ -10,14 +10,11 @@ function CustomMarker({ text, handleClick, coordsinates }) {
 }
 
 export function GoogleMap() {
-
     const [CenterCoordinates, setCenterCoordinates] = useState({ lat: 31.99612839968232, lng: 34.95303850597809 })
     const [zoom, setZoom] = useState(10)
-
     const tlvCoordinates = { lat: 32.09184423370253, lng: 34.788072809711785 }
     const modiinCoordinates = { lat: 31.896195489335202, lng: 35.01110618121365 }
     const herzliyaCoordinates = { lat: 32.17662239427968, lng: 34.8388409554869 }
-
 
     function handleClick({ lat, lng }) {
         setZoom(14)
@@ -75,10 +72,8 @@ export function GoogleMap() {
                     coordsinates={herzliyaCoordinates}
 
                 />
-
             </GoogleMapReact>
             </div>
-
         </div>
     );
 }

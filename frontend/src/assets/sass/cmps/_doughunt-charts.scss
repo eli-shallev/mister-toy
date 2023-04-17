@@ -7,11 +7,12 @@
     width: 100%;
 
     .doughnut-item {
-        width: 100%;
         color: $clr4;
+        width: 80%;
     }
 
     @include for-mobile-layout{
         flex-direction: column;
+        width: 100%;
     }
 }

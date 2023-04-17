@@ -6,8 +6,6 @@ const BASE_URL = 'toy/'
 const PAGE_SIZE = 3
 const labels = ["On wheels", "Box game", "Art", "Baby", "Doll", "Puzzle", "Outdoor", "Battery Powered"]
 
-_setDemoDate()
-
 export const toyService = {
     query,
     getById,
@@ -19,6 +17,8 @@ export const toyService = {
     getLabels,
     getLabelsOptions,
     getDashboardData,
+    addMsg,
+    removeMsg,
     PAGE_SIZE
 }
 
@@ -38,11 +38,19 @@ function remove(toyId) {
 
 function save(toy) {
     if (toy._id) {
-        return httpService.put(BASE_URL, toy)
+        return httpService.put(BASE_URL + toy._id, toy)
     } else {
         toy.createdAt = Date.now()
         return httpService.post(BASE_URL, toy)
     }
+}
+
+function addMsg(toyId, msg) {
+    return httpService.post(BASE_URL + toyId + '/msg/', msg)
+}
+
+function removeMsg(toyId, msgId) {
+    return httpService.delete(BASE_URL + toyId + '/msg/' + msgId)
 }
 
 function getEmptyToy(name = '', price = '', labels = [], imgUrl = '') {
@@ -65,34 +73,32 @@ function getLabelsOptions() {
     return labels.map((label, idx) => ({ name: label, id: idx + 1 }))
 }
 
-function getDashboardData() {
+async function getDashboardData() {
     const labels = getLabels()
     const labelsByAmountMap = {}
     labels.forEach(label => labelsByAmountMap[label] = 0)
     const labelsByPriceMap = { ...labelsByAmountMap }
 
-    //console.log(labelsByAmountMap)
-    return query(getDefaultFilter(), getDefaultSort(), false)
-        .then(toys => {
-            console.log(toys)
-            toys.forEach(toy => {
-                toy.labels.forEach(label => {
-                    labelsByAmountMap[label]++
-                    //console.log('toy: '+ toy.name)
-                    //console.log(labelsByAmountMap[label])
-                    labelsByPriceMap[label] += toy.price
-                })
+    try {
+        const toys = await query(getDefaultFilter(), getDefaultSort(), false)
+        toys.forEach(toy => {
+            toy.labels.forEach(label => {
+                labelsByAmountMap[label]++
+                labelsByPriceMap[label] += toy.price
             })
-            for (const label in labelsByPriceMap) {
-                if (labelsByAmountMap[label] === 0) {
-                    delete labelsByPriceMap[label]
-                    delete labelsByAmountMap[label]
-                } else {
-                    labelsByPriceMap[label] /= labelsByAmountMap[label]
-                }
-            }
-            return { labelsByAmountMap, labelsByPriceMap }
         })
+        for (const label in labelsByPriceMap) {
+            if (labelsByAmountMap[label] === 0) {
+                delete labelsByPriceMap[label]
+                delete labelsByAmountMap[label]
+            } else {
+                labelsByPriceMap[label] /= labelsByAmountMap[label]
+            }
+        }
+        return { labelsByAmountMap, labelsByPriceMap }
+    } catch (error) {
+        throw error
+    }
 }
 
 function _createToy(name = '', price = '', labels = [], imgUrl = '') {

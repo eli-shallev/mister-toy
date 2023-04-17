@@ -1,0 +1,13 @@
+.screen{
+    background-color: adjust-color($color: $clr2, $alpha: -0.25);
+    height: 100%;
+    width: 100%;
+    z-index: 98;
+    position: fixed;
+    cursor: pointer;
+    display: none !important;
+
+    &.open{
+        display: block !important ;
+    }
+}

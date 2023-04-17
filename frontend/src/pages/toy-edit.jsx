@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { toyService } from "../services/toy.service"
 import { saveToy } from "../store/toy.action"
-
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
@@ -22,7 +21,6 @@ const SignupSchema = Yup.object().shape({
         .required('Required'),
 });
 
-
 export function ToyEdit() {
     const [toyToEdit, setToyToEdit] = useState(null)
     const { toyId } = useParams()
@@ -30,28 +28,35 @@ export function ToyEdit() {
 
     useEffect(() => {
         if (toyId) {
-            toyService.getById(toyId)
-                .then(toy => {
+            ; (async () => {
+                try {
+                    const toy = await toyService.getById(toyId)
                     setToyToEdit(toy)
-                })
+                } catch (error) {
+                    console.log(error)
+                }
+
+            })()
         } else {
             setToyToEdit(toyService.getEmptyToy())
         }
     }, [])
 
-    const onSubmit = (values) => {
+    async function onSubmit(values) {
+        
         toyToEdit.name = values.name
         toyToEdit.price = values.price
         toyToEdit.inStock = values.inStock === 'true'
         toyToEdit.labels = values.labels ? values.labels : toyToEdit.labels
-        saveToy(toyToEdit)
-            .then(() => {
-                showSuccessMsg(`Toy ${toyId ? 'updated' : 'added'}`)
-                navigate('/toy')
-            })
-            .catch(err => {
-                showErrorMsg(`Cannot ${toyId ? 'update' : 'add'} toy`)
-            })
+        toyToEdit.msgs = toyToEdit.msgs? toyToEdit.msgs : []
+        console.log(toyToEdit)
+        try {
+            await saveToy(toyToEdit)
+            showSuccessMsg(`Toy ${toyId ? 'updated' : 'added'}`)
+            navigate('/toy')
+        } catch (error) {
+            showErrorMsg(`Cannot ${toyId ? 'update' : 'add'} toy`)
+        }
     }
 
     return (
