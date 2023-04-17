@@ -46,7 +46,6 @@ Enter the following line to run the server locally on your computer:
 npm run server:dev
 ```
 Runs the server in the development mode on http://localhost:3030 .
-Open http://localhost:3000 to view it in the browser.
 
 ### Frontend
 in the 'frontend' folder, Open the terminal and enter the following line to install necessary packages:
@@ -81,4 +80,4 @@ Open http://localhost:3000 to view it in the browser.
 ### Some mobile!
 Just a taste of the mobile experience. The app is completely responsive
 
-<img src="https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/index-m.png" width="33%" style="float: left"/><img src="https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/details-m.png" width="33%" style="float: left;"/><img src="https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/edit-m.png" width="33%" style="float: left;"/>
+<img src="https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/mobile1.png" width="33%" style="float: left"/><img src="https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/mobile2.png" width="33%" style="float: left;"/><img src="https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/mobile3.png" width="33%" style="float: left;"/>
