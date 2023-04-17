@@ -3,7 +3,7 @@
 A simple fullstack CRUDL app demonstrating the use of react, chartjs, google maps, express and atlas mongoDB
 [Take a look, it's on Render](https://toy-store-4ab2.onrender.com/#/ "Render link")
 
-![Index image](https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/index.png "Index image")
+![Index image](https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/index.png "Index image")
 ___
 
 ### Table of Contents
@@ -64,19 +64,19 @@ Open http://localhost:3000 to view it in the browser.
 
 ### Home/Dashboard page
 
-![Home/Dashboard page](https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/details.png "Home/Dashboard page")
+![Home/Dashboard page](https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/Home.png "Home/Dashboard page")
 
 ### About page
 
-![About page](https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/details.png "About page")
+![About page](https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/about.png "About page")
 
 ### Toy details page
 
-![Toy details page](https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/details.png "Toy details page")
+![Toy details page](https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/details.png "Toy details page")
 
 ### Toy create/update page
 
-![User create/update page](https://raw.githubusercontent.com/eli-shallev/watcher-app/main/screenshots/edit.png "User create/update page")
+![User create/update page](https://raw.githubusercontent.com/eli-shallev/mister-toy/main/screenshots/edit.png "User create/update page")
 
 ### Some mobile!
 Just a taste of the mobile experience. The app is completely responsive
