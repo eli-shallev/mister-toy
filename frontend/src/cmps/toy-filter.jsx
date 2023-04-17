@@ -70,6 +70,7 @@ export function ToyFilter({ onSetFilter, onSetSort, toysLength }) {
                     multiple
                     id="labels"
                     name="labels"
+                    size="small"
                     options={toyService.getLabels()}
                     getOptionLabel={(option) => option}
                     defaultValue={[]}
